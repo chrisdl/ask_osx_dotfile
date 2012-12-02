@@ -14,7 +14,7 @@ Please check out [Mathias dotfiles repo](https://github.com/mathiasbynens/dotfil
 
 ## Installation
 
-Just download manually (or with git if you want to track it) the ask_osx_dotfile.sh and run it from the terminal (while standing in same directory as the file) with
+Just download ask_osx_dotfile.sh manually (or with git if you want to track it) and run it from the terminal (while standing in same directory as the file) like so
 
 Download
 ```bash
