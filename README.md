@@ -1,14 +1,11 @@
-# OS X Settings for powerusers
+# Nice OS X Settings
 
 ## What is this?
 
-This is a mix of these two dotfiles with nice settings for OS X (great for fresh installs!).
-
-[https://github.com/mathiasbynens/dotfiles/blob/master/.osx](https://github.com/mathiasbynens/dotfiles/blob/master/.osx)
-
-[https://github.com/paulirish/dotfiles/blob/master/.osx](https://github.com/paulirish/dotfiles/blob/master/.osx)
-
-All I've done is **wrap everything in if-statements** so you can choose which settings you wish to modify.
+ask_osx_dotfile.sh is an amalgamation of two dotfiles with nice settings for OS X (great for fresh installs!).
+All I've done is **wrap everything in if-statements** so you can choose which settings you wish to use.
+The basis is [Mathias Bynens excellent .osx dotfile](https://github.com/mathiasbynens/dotfiles/blob/master/.osx) and 
+[Paul Irishes fork](https://github.com/paulirish/dotfiles/blob/master/.osx) of it.
 
 Please check out [Mathias dotfiles repo](https://github.com/mathiasbynens/dotfiles) and [Pauls fork](https://github.com/paulirish/dotfiles) for more goodness.
 
