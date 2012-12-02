@@ -3,8 +3,11 @@
 ## What is this?
 
 This is a mix of these two dotfiles with nice settings for OS X (great for fresh installs!).
+
 [https://github.com/mathiasbynens/dotfiles/blob/master/.osx](https://github.com/mathiasbynens/dotfiles/blob/master/.osx)
+
 [https://github.com/paulirish/dotfiles/blob/master/.osx](https://github.com/paulirish/dotfiles/blob/master/.osx)
+
 All I've done is **wrap everything in if-statements** so you can choose which settings you wish to modify.
 
 Please check out [Mathias dotfiles repo](https://github.com/mathiasbynens/dotfiles) and [Pauls fork](https://github.com/paulirish/dotfiles) for more goodness.
