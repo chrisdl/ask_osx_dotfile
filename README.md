@@ -18,12 +18,12 @@ Just download ask_osx_dotfile.sh manually (or with git if you want to track it) 
 
 Download
 ```bash
-curl -#L https://github.com/chrisdl/ask_osx_dotfile/master/ask_osx_dotfile.sh
+> curl -#L https://github.com/chrisdl/ask_osx_dotfile/master/ask_osx_dotfile.sh
 ```
 
 or with Git
 ```bash
-git clone https://github.com/chrisdl/ask_osx_dotfile.git
+> git clone https://github.com/chrisdl/ask_osx_dotfile.git
 ```
 
 Run
