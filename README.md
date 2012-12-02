@@ -1,4 +1,4 @@
-# OS X Dotfile Asker Mod
+# OS X Settings for powerusers
 
 ## What is this?
 
