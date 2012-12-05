@@ -9,12 +9,18 @@
 #  - https://github.com/paulirish/dotfiles/blob/master/.osx
 
 # Ask for the administrator password upfront
+
+echo "This dotfile will ask to change your settings (that is why it needs your admin password)."
+echo "It DOES NOT TOGGLE settings, i.e. it is a one way street. Thus if you are unsure"
+echo "about a setting, please select NO so that it skips it."
+echo "Please type your password to continue..."
+
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.ask_osx_dotfile` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-	read -p "Do you wish to change General UI/UX settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to change General UI/UX settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 	    read -p "Menu bar: disable transparency? (y/n)> " ans
@@ -129,7 +135,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -137,7 +143,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Trackpad, mouse, keyboard, Bluetooth accessories and input settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Trackpad, mouse, keyboard, Bluetooth accessories and input settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p  "Trackpad: enable tap to click for this user and for the login screen? (y/n)> " ans
@@ -238,7 +244,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -246,7 +252,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Screen and Screenshot settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Screen and Screenshot settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Require password immediately after sleep or screen saver begins? (y/n)> " ans
@@ -282,7 +288,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -290,7 +296,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Finder settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Finder settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Finder: disable window animations and Get Info animations? (y/n)> " ans
@@ -435,7 +441,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -443,7 +449,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify dock & hot corner settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify dock & hot corner settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Enable highlight hover effect for the grid view of a stack (Dock)? (y/n)> " ans
@@ -563,7 +569,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -571,7 +577,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to change Safari and WebKit settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to change Safari and WebKit settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Set Safari’s home page to 'about:blank' for faster loading? (y/n)> " ans
@@ -627,7 +633,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -635,7 +641,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify iTunes settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify iTunes settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Disable the iTunes store link arrows? (y/n)> " ans
@@ -675,7 +681,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -683,7 +689,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Mail.app settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Mail.app settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Disable send and reply animations in Mail.app? (y/n)> " ans
@@ -703,7 +709,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -711,7 +717,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Terminal settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Terminal settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Only use UTF-8 in Terminal.app? (y/n)> " ans
@@ -727,7 +733,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -749,7 +755,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -757,7 +763,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to change Screen and Screenshot settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Address Book, Dashboard, iCal, TextEdit and Disk Utility settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Enable the debug menu in Address Book? (y/n)> " ans
@@ -793,29 +799,36 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
 	# Mac App Store                                                               #
 	###############################################################################
 
-	read -p "Enable the WebKit Developer Tools in the Mac App Store? (y/n)> " ans
-	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-		defaults write com.apple.appstore WebKitDeveloperExtras -bool true
-	fi
+    echo ""
+    read -p "Do you wish to modify Mac App Store settings? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
-	read -p "Enable Debug Menu in the Mac App Store? (y/n)> " ans
-	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-		defaults write com.apple.appstore ShowDebugMenu -bool true
-	fi
+    	read -p "Enable the WebKit Developer Tools in the Mac App Store? (y/n)> " ans
+    	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+    		defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+    	fi
+
+    	read -p "Enable Debug Menu in the Mac App Store? (y/n)> " ans
+    	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+    		defaults write com.apple.appstore ShowDebugMenu -bool true
+    	fi
+    else
+        echo "Moving to next section of settings..."
+    fi
 
 	###############################################################################
 	# Google Chrome & Google Chrome Canary                                        #
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Google Chrome & Google Chrome Canary settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Google Chrome & Google Chrome Canary settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 		read -p "Allow installing user scripts via GitHub, gists or Userscripts.org? (y/n)> " ans
 		if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
@@ -823,7 +836,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 			defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://*.github.com/*" "http://userscripts.org/*"
 		fi
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -831,7 +844,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify SizeUp.app settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify SizeUp.app settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Start SizeUp at login? (y/n)> " ans
@@ -845,7 +858,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -853,7 +866,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Transmission.app settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Transmission.app settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Use '~/Documents/Torrents' to store incomplete downloads? (y/n)> " ans
@@ -882,7 +895,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
@@ -890,7 +903,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 	###############################################################################
 
 	echo ""
-	read -p "Do you wish to modify Twitter.app settings? (y/n)> " ans
+	read -p "[SECTION] Do you wish to modify Twitter.app settings? (y/n)> " ans
 	if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
 		read -p "Disable smart quotes as it’s annoying for code tweets? (y/n)> " ans
@@ -929,7 +942,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 		fi
 
 	else
-	    echo "ok moving on..."
+	    echo "Moving to next section of settings..."
 	fi
 
 	###############################################################################
