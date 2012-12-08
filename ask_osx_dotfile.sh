@@ -644,30 +644,30 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
     ###############################################################################
 
     echo ""
-    read -p "[SECTION] Do you wish to modify iTunes settings? (y/n)> " ans
+    read -p "[SECTION] Do you wish to modify iTunes (mostly pre iTunes 11) settings? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
-        read -p "Disable the iTunes store link arrows? (y/n)> " ans
+        read -p "Disable the iTunes (pre 11) store link arrows? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.iTunes show-store-link-arrows -bool false
         fi
 
-        read -p "Disable the Genius sidebar in iTunes? (y/n)> " ans
+        read -p "Disable the Genius sidebar in iTunes (pre 11)? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.iTunes disableGeniusSidebar -bool true
         fi
 
-        read -p "Disable the Ping sidebar in iTunes? (y/n)> " ans
+        read -p "Disable the Ping sidebar in iTunes (pre 11)? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.iTunes disablePingSidebar -bool true
         fi
 
-        read -p "Disable all the other Ping stuff in iTunes? (y/n)> " ans
+        read -p "Disable all the other Ping stuff in iTunes (pre 11)? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.iTunes disablePing -bool true
         fi
 
-        read -p "Disable radio stations in iTunes? (y/n)> " ans
+        read -p "Disable radio stations in iTunes (pre 11)? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.iTunes disableRadio -bool true
         fi
