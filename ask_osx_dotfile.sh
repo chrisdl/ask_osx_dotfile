@@ -42,9 +42,12 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
             defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
         fi
 
-        read -p "Always show scrollbars? (y/n)> " ans
+        read -p "Scrollbars: Edit scrollbars behaviour? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-            defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+            read -p "Possible values: WhenScrolling, Automatic or Always? (value or n)> " ans
+            if [ "$ans" != "n" ]; then
+                defaults write NSGlobalDomain AppleShowScrollBars -string "$ans"
+            fi
         fi
 
         read -p "Disable smooth scrolling (Only do this if you’re on an older Mac that messes up the animation) (y/n)> " ans
