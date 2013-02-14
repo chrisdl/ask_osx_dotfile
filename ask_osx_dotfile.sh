@@ -460,7 +460,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
         read -p "Enable highlight hover effect for the grid view of a stack (Dock)? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-            defaults write com.apple.dock mouse-over-hilte-stack -bool true
+            defaults write com.apple.dock mouse-over-hilite-stack -bool true
         fi
 
         read -p "Set the icon size of Dock items to 36 pixels? (y/n)> " ans
