@@ -508,6 +508,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
             defaults write com.apple.dock dashboard-in-overlay -bool true
         fi
 
+        read -p "Don’t show Dashboard at all? (y/n)>" ans
+        if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+            defaults write com.apple.dashboard mcx-disabled -bool true
+        fi
+
         read -p "Remove the auto-hiding Dock delay? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.Dock autohide-delay -float 0
