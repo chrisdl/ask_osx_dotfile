@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ask_osx_dotfile.sh https://github.com/chrisdl (2 December 2012)
 
