@@ -454,7 +454,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
     fi
 
     ###############################################################################
-    # Dock & hot corners                                                          #
+    # Dock, Dashboard & hot corners                                               #
     ###############################################################################
 
     echo ""
@@ -464,6 +464,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
         read -p "Enable highlight hover effect for the grid view of a stack (Dock)? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.dock mouse-over-hilite-stack -bool true
+        fi
+
+        read -p "Disable Dashboard? (y/n)> " ans
+        if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+            defaults write com.apple.dashboard mcx-disabled -bool true
         fi
 
         read -p "Set the icon size of Dock items to 36 pixels? (y/n)> " ans
@@ -770,6 +775,40 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
     else
         echo "Moving to next section of settings..."
+    fi
+
+    ###############################################################################
+    # Spotlight                                                                   #
+    ###############################################################################
+
+    echo ""
+    echo "-- SPOTLIGHT --"
+    read -p "Only spotlight index applications and directories (will get buggy if we disable applications)? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+        defaults write com.apple.spotlight orderedItems -array \
+        '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+        '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+        '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+        '{"enabled" = 1;"name" = "PDF";}' \
+        '{"enabled" = 1;"name" = "FONTS";}' \
+        '{"enabled" = 0;"name" = "DOCUMENTS";}' \
+        '{"enabled" = 0;"name" = "MESSAGES";}' \
+        '{"enabled" = 0;"name" = "CONTACT";}' \
+        '{"enabled" = 0;"name" = "EVENT_TODO";}' \
+        '{"enabled" = 0;"name" = "IMAGES";}' \
+        '{"enabled" = 0;"name" = "BOOKMARKS";}' \
+        '{"enabled" = 0;"name" = "MUSIC";}' \
+        '{"enabled" = 0;"name" = "MOVIES";}' \
+        '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+        '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+        '{"enabled" = 0;"name" = "SOURCE";}'
+
+        # Load new settings before rebuilding the index
+        killall mds
+        # Make sure indexing is enabled for the main volume
+        sudo mdutil -i on /
+        # Rebuild the index from scratch
+        sudo mdutil -E /
     fi
 
     ###############################################################################
