@@ -20,6 +20,10 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.ask_osx_dotfile` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+    ###############################################################################
+    # Section 1: General UI/UX                                                    #
+    ###############################################################################
+
     read -p "[SECTION] Do you wish to change General UI/UX settings? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
@@ -112,12 +116,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
         read -p "Set Help Viewer windows to non-floating mode? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.helpviewer DevMode -bool true
-        fi
-
-        echo "****** WARNING: this is known to cause problems when saving files in Adobe Illustrator CS5 *********"
-        read -p "Fix for the ancient UTF-8 bug in QuickLook (http://mths.be/bbo)? (y/n)> " ans
-        if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-            echo "0x08000100:0" > ~/.CFUserTextEncoding
         fi
 
         read -p "Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window? (y/n)> " ans
