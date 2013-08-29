@@ -179,6 +179,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
             defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
         fi
 
+        read -p "Disable the sound effects on boot (y/n)> " ans
+        if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+            nvram SystemAudioVolume=" "
+        fi
+
         read -p  "Increase sound quality for Bluetooth headphones/headsets? (y/n)> " ans
         if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
             defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
