@@ -5,9 +5,10 @@
 
 # If you find a bug don't hesistate to contact me and/or suggest a fix for it.
 
-# These settings come from
+# These settings originally came from
 #  - https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #  - https://github.com/paulirish/dotfiles/blob/master/.osx
+# But are definitely tailed to my taste in settings as well.
 
 # Ask for the administrator password upfront
 
@@ -31,15 +32,6 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
     read -p "Menu bar: disable transparency? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
-    fi
-
-    # Don't run on 10.8 systems
-    if [ "$OSTYPE" != "darwin12" ]; then
-        read -p "Menu bar: show remaining battery time (on pre-10.8); hide percentage? (y/n)> " ans
-        if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-            defaults write com.apple.menuextra.battery ShowPercent -string "NO"
-            defaults write com.apple.menuextra.battery ShowTime -string "YES"
-        fi
     fi
 
     read -p "Menu bar: hide the useless Time Machine and Volume icons? (y/n)> " ans
@@ -786,14 +778,6 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
     read -p "Enable Dashboard dev mode (allows keeping widgets on the desktop)? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.dashboard devmode -bool true
-    fi
-
-    # Don't run on 10.8 systems
-    if [ "$OSTYPE" != "darwin12" ]; then
-        read -p "Enable the debug menu in iCal (pre-10.8)? (y/n)> " ans
-        if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-            defaults write com.apple.iCal IncludeDebugMenu -bool true
-        fi
     fi
 
     read -p "Use plain text mode for new TextEdit documents? (y/n)> " ans
