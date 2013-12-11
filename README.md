@@ -4,10 +4,10 @@
 
 ask_osx_dotfile.sh is an amalgamation of two dotfiles with nice settings for OS X (great for fresh installs!).
 All I've done is **wrap everything in if-statements** so you can choose which settings you wish to use.
-The basis is [Mathias Bynens excellent .osx dotfile](https://github.com/mathiasbynens/dotfiles/blob/master/.osx) and 
-[Paul Irishes fork](https://github.com/paulirish/dotfiles/blob/master/.osx) of it.
+The basis is [Mathias Bynens excellent .osx dotfile](https://github.com/mathiasbynens/dotfiles/blob/master/.osx) and
+[Paul Irishes fork](https://github.com/paulirish/dotfiles/blob/master/.osx) of it. Paul Irishes seems to have gotten a bit stale as of late though (Dec 2013) so this mainly gets updated from
 
-Please check out [Mathias dotfiles repo](https://github.com/mathiasbynens/dotfiles) and [Pauls fork](https://github.com/paulirish/dotfiles) for more goodness.
+**Please Note: This is not an exact mirror of all the settings in these dotfiles. This is merely a manual version for the things which would seem to be applicable to most computers.**
 
 ## Installation
 
@@ -38,3 +38,9 @@ If you modify a setting which you wish to change back, I would recommend taking 
 y, Y, yes, Yes and YES = yes. **Everything else = no**
 
 Take a look in the ask_osx_dotfile.sh file, how it works is very straightforward.
+
+Please check out [Mathias dotfiles repo](https://github.com/mathiasbynens/dotfiles) and [Pauls fork](https://github.com/paulirish/dotfiles) for more dotfiles goodness.
+
+## License & Disclaimer
+
+Use at your own risk! This will run sudo commands on your computer!
