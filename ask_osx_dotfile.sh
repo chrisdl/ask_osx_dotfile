@@ -173,7 +173,7 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
 
     read -p "Disable the sound effects on boot (y = off, n = on)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-        nvram SystemAudioVolume=%80
+        sudo nvram SystemAudioVolume=" "
     else
         nvram -d SystemAudioVolume
     fi
