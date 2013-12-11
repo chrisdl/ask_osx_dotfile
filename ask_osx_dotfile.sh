@@ -101,11 +101,6 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
     fi
 
-    read -p "Disable the crash reporter? (y/n)> " ans
-    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-        defaults write com.apple.CrashReporter DialogType -string "none"
-    fi
-
     read -p "Set Help Viewer windows to non-floating mode? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.helpviewer DevMode -bool true
