@@ -41,6 +41,8 @@ Take a look in the ask_osx_dotfile.sh file, how it works is very straightforward
 
 Please check out [Mathias dotfiles repo](https://github.com/mathiasbynens/dotfiles) and [Pauls fork](https://github.com/paulirish/dotfiles) for more dotfiles goodness.
 
-## License & Disclaimer
+## License &/or Disclaimer
 
-Use at your own risk! This will run sudo commands on your computer!
+**Use at your own risk! This will run sudo commands on your computer!**
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
