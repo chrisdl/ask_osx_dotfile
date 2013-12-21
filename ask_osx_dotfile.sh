@@ -173,14 +173,14 @@ echo ""
 read -p "[SECTION] Do you wish to modify Trackpad, mouse, keyboard, Bluetooth accessories and input settings? (y/n)> " ans
 if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
-    read -p  "Trackpad: enable tap to click for this user and for the login screen? (y/n)> " ans
+    read -p "Trackpad: enable tap to click for this user and for the login screen? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
         defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
         defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
     fi
 
-    read -p  "Trackpad: map bottom right corner to right-click? (y/n)> " ans
+    read -p "Trackpad: map bottom right corner to right-click? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
         defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
@@ -188,14 +188,14 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
     fi
 
-    read -p  "Trackpad: swipe between pages with three fingers? (y/n)> " ans
+    read -p "Trackpad: swipe between pages with three fingers? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
         defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
         defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
     fi
 
-    read -p  "Disable “natural” (Lion-style) scrolling? (y/n)> " ans
+    read -p "Disable “natural” (Lion-style) scrolling? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
     fi
@@ -207,23 +207,23 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         nvram -d SystemAudioVolume
     fi
 
-    read -p  "Increase sound quality for Bluetooth headphones/headsets? (y/n)> " ans
+    read -p "Increase sound quality for Bluetooth headphones/headsets? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
     fi
 
-    read -p  "mute all sounds, incl volume change feedback? (y/n)> " ans
+    read -p "mute all sounds, incl volume change feedback? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write "com.apple.sound.beep.feedback" -int 0
         defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
     fi
 
-    read -p  "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)? (y/n)> " ans
+    read -p "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
     fi
 
-    read -p  "Enable access for assistive devices? (y/n)> " ans
+    read -p "Enable access for assistive devices? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
         sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
@@ -231,32 +231,32 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         #sudo osascript -e 'tell application "System Events" to set UI elements enabled to true'
     fi
 
-    read -p  "Use scroll gesture with the Ctrl (^) modifier key to zoom? (y/n)> " ans
+    read -p "Use scroll gesture with the Ctrl (^) modifier key to zoom? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
         defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
     fi
-    read -p  "Follow the keyboard focus while zoomed in? (y/n)> " ans
+    read -p "Follow the keyboard focus while zoomed in? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
     fi
 
-    read -p  "Disable press-and-hold for keys in favor of key repeat? (y/n)> " ans
+    read -p "Disable press-and-hold for keys in favor of key repeat? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
     fi
 
-    read -p  "Set a blazingly fast keyboard repeat rate? (y/n)> " ans
+    read -p "Set a blazingly fast keyboard repeat rate? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain KeyRepeat -int 0
     fi
 
-    read -p  "Automatically illuminate built-in MacBook keyboard in low light? (y/n)> " ans
+    read -p "Automatically illuminate built-in MacBook keyboard in low light? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.BezelServices kDim -bool true
     fi
 
-    read -p  "Turn off keyboard illumination when computer is not used for 5 minutes? (y/n)> " ans
+    read -p "Turn off keyboard illumination when computer is not used for 5 minutes? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.BezelServices kDimTime -int 300
     fi
@@ -272,17 +272,17 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         defaults write NSGlobalDomain AppleMetricUnits -bool true
     fi
 
-    read -p  "Disable auto-correct? (y/n)> " ans
+    read -p "Disable auto-correct? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
     fi
 
-    read -p  "Disable smart quotes as they’re annoying when typing code? (y/n)> " ans
+    read -p "Disable smart quotes as they’re annoying when typing code? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults  write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
     fi
 
-    read -p  "Disable smart dashes as they’re annoying when typing code? (y/n)> " ans
+    read -p "Disable smart dashes as they’re annoying when typing code? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
     fi
