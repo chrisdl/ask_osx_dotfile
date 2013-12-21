@@ -797,11 +797,6 @@ echo ""
 read -p "[SECTION] Do you wish to modify Address Book, Dashboard, iCal, TextEdit and Disk Utility settings? (y/n)> " ans
 if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
-    read -p "Enable the debug menu in Address Book? (y/n)> " ans
-    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-        defaults write com.apple.addressbook ABShowDebugMenu -bool true
-    fi
-
     read -p "Enable Dashboard dev mode (allows keeping widgets on the desktop)? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write com.apple.dashboard devmode -bool true
