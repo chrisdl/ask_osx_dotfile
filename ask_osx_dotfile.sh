@@ -34,10 +34,28 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
     fi
 
-    read -p "Menu bar: hide the useless Time Machine and Volume icons? (y/n)> " ans
+    read -p "Menu bar: hide Time Machine icon? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-        defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+        defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
     fi
+
+    read -p "Menu bar: hide Volume icon? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+        defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/Volume.menu"
+    fi
+
+    read -p "Menu bar: hide User icon? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+        defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/User.menu"
+    fi
+
+    read -p "Menu bar: hide Bluetooth icon? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+        defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+    fi
+
+    # You can manually edit the plist file in ByHost with xcode.
+    # If you want your icons back.
 
     read -p "Scrollbars: Edit scrollbars behaviour? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
