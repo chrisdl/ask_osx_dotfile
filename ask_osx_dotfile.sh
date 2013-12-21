@@ -79,9 +79,6 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         fi
     fi
 
-    read -p "Disable smooth scrolling (Only do this if you’re on an older Mac that messes up the animation) (y/n)> " ans
-        defaults write NSGlobalDomain NSScrollAnimationEnabled -bool false
-
     read -p "Disable opening and closing window animations? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
