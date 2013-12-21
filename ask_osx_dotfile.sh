@@ -277,6 +277,16 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
     fi
 
+    read -p  "Disable smart quotes as they’re annoying when typing code? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+        defaults  write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+    fi
+
+    read -p  "Disable smart dashes as they’re annoying when typing code? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+        defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+    fi
+
 else
     echo "Moving to next section of settings..."
 fi
