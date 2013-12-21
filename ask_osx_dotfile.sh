@@ -155,6 +155,11 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
     fi
 
+    read -p "Disable Notification Center and remove the menu bar icon? (y/n)> " ans
+    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
+        launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+    fi
+
 else
     echo "Moving to next section of settings..."
 fi
