@@ -212,23 +212,9 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
         defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
     fi
 
-    read -p "mute all sounds, incl volume change feedback? (y/n)> " ans
-    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-        defaults write "com.apple.sound.beep.feedback" -int 0
-        defaults write "com.apple.systemsound" "com.apple.sound.uiaudio.enabled" -int 0
-    fi
-
     read -p "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-    fi
-
-    read -p "Enable access for assistive devices? (y/n)> " ans
-    if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
-        echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
-        sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
-        # TODO: avoid GUI password prompt somehow (http://apple.stackexchange.com/q/60476/4408)
-        #sudo osascript -e 'tell application "System Events" to set UI elements enabled to true'
     fi
 
     read -p "Use scroll gesture with the Ctrl (^) modifier key to zoom? (y/n)> " ans
