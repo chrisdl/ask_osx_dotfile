@@ -35,41 +35,47 @@ if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == 
     fi
 
     # Create folder if it does not already exist
-    if [ -f '/System/Library/CoreServices/Menu Extras/hidden' ]; then
-        sudo mkdir /System/Library/CoreServices/Menu\ Extras/hidden
-    fi
+    # if [ -f '/System/Library/CoreServices/Menu Extras/hidden' ]; then
+    #     sudo mkdir /System/Library/CoreServices/Menu\ Extras/hidden
+    # fi
+
+    defaults delete com.apple.systemuiserver menuExtras
 
     read -p "Menu bar: hide Time Machine icon? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
 
         # This works for most users
         defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
+    else
+        defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
 
         # This will always work (it seems)
-        sudo mv /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu /System/Library/CoreServices/Menu\ Extras/hidden/
+        # sudo mv /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu /System/Library/CoreServices/Menu\ Extras/hidden/
     fi
 
     read -p "Menu bar: hide Volume icon? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/Volume.menu"
-        sudo mv /System/Library/CoreServices/Menu\ Extras/Volume.menu /System/Library/CoreServices/Menu\ Extras/hidden/
+        # sudo mv /System/Library/CoreServices/Menu\ Extras/Volume.menu /System/Library/CoreServices/Menu\ Extras/hidden/
+    else
+        defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/Volume.menu"
     fi
 
     read -p "Menu bar: hide User icon? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/User.menu"
-        sudo mv /System/Library/CoreServices/Menu\ Extras/User.menu /System/Library/CoreServices/Menu\ Extras/hidden/
+        # sudo mv /System/Library/CoreServices/Menu\ Extras/User.menu /System/Library/CoreServices/Menu\ Extras/hidden/
+    else
+        defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/User.menu"
     fi
 
     read -p "Menu bar: hide Bluetooth icon? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
         defaults write ~/Library/Preferences/ByHost/com.apple.systemuiserver.* dontAutoLoad -array-add "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
-        sudo mv /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu /System/Library/CoreServices/Menu\ Extras/hidden/
+        # sudo mv /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu /System/Library/CoreServices/Menu\ Extras/hidden/
+    else
+        defaults write com.apple.systemuiserver menuExtras -array-add "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
     fi
-
-    # You can manually edit the plist file in ByHost with xcode.
-    # If you want your icons back.
-    # Also you can move the menu bar extras back in CoreServices (from the hidden directory.)
 
     read -p "Scrollbars: Edit scrollbars behaviour? (y/n)> " ans
     if [ "$ans" == "y" ] || [ "$ans" == "Y" ] || [ "$ans" == "Yes" ] || [ "$ans" == "YES" ]; then
