@@ -1,6 +1,5 @@
-# OBS
- **I haven't updated this in a while and I can no longer condone using this project on your computer. I will remove this message when I get it up to date (probably in relation with the next OS X release)**
-# /OBS
+# DEPRECATED
+ **I haven't updated this in a while and I can no longer condone using this project on your computer.**
 
 # Nice OS X Settings
 
